@@ -34,7 +34,9 @@
   .card-title{font-size:14px;font-weight:700;flex:1}
   .card-body{padding:14px 18px 14px 32px;font-size:13px;color:#444}
 
-  /* ========== 表格（桌面端） ========== */
+  /* ========== 表格 ========== */
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -4px;padding:0 4px}
+  .table-wrap table{width:100%;border-collapse:collapse;min-width:500px}
   .card-body table{width:100%;border-collapse:collapse}
   .card-body table td{padding:7px 10px;border-bottom:1px solid #f5f5f5;font-size:13px;vertical-align:top}
   .card-body table td:first-child{width:140px;color:#888;white-space:nowrap;font-weight:500}
@@ -108,16 +110,11 @@
     .kpi-box .kpi-value{font-size:16px}
     .kpi-box .kpi-label{font-size:10px}
 
-    /* 表格：转为卡片式 */
-    .card-body table{display:block}
-    .card-body table thead{display:none}
-    .card-body table tbody{display:block}
-    .card-body table tr{display:block;background:#fff;border:1px solid #eee;border-radius:6px;margin-bottom:8px;padding:8px 10px}
-    .card-body table td{display:block;width:100%!important;padding:4px 0;border-bottom:none;font-size:12px;white-space:normal}
-    .card-body table td:first-child{font-weight:600;color:#0d47a1;font-size:11px;margin-bottom:2px;width:100%!important}
-    /* 表头行（第一行全部是td）也转为卡片 */
-    .card-body table tr:first-child{background:#f0f4f8;font-weight:600;display:flex;flex-wrap:wrap;gap:0}
-    .card-body table tr:first-child td{flex:1;min-width:80px;font-size:11px;color:#0d47a1;padding:4px 6px}
+    /* 表格：横向滚动 */
+    .table-wrap{margin:0 -2px;padding:0 2px}
+    .card-body table,.table-wrap table{min-width:560px}
+    .card-body table td{padding:6px 8px;font-size:12px}
+    .card-body table td:first-child{width:120px}
 
     /* 商机/风险：单列 */
     .oppo-card{flex-direction:column;gap:10px}
@@ -234,13 +231,13 @@
         <button class="btn-expand">收起 ▲</button>
       </div>
       <div class="card-body" style="display:block;">
-        <table>
+        <div class="table-wrap"><table>
           <tr><td>股东名称</td><td>持股比例</td><td>出资方式</td><td>备注</td></tr>
           <tr><td>刘XX（实际控制人）</td><td>40%</td><td>货币+技术</td><td>董事长兼总经理</td></tr>
           <tr><td>青岛海洋产业发展基金</td><td>25%</td><td>货币</td><td>2020年入股，政府引导基金</td></tr>
           <tr><td>孙XX</td><td>20%</td><td>货币</td><td>副总经理，分管工程总包</td></tr>
           <tr><td>核心技术团队（持股平台）</td><td>15%</td><td>技术+货币</td><td>6名核心技术人员</td></tr>
-        </table>
+        </table></div>
         <div class="note">💡 实际控制人刘XX持股40%，通过与孙XX一致行动协议合计控制60%表决权。政府引导基金持股25%，有董事会席位。</div>
       </div>
     </div>
@@ -289,14 +286,14 @@
         <button class="btn-expand">收起 ▲</button>
       </div>
       <div class="card-body" style="display:block;">
-        <table>
+        <div class="table-wrap"><table>
           <tr><td>姓名</td><td>职务</td><td>决策角色</td><td>关注重点</td><td>沟通建议</td></tr>
           <tr><td>刘XX</td><td>董事长兼总经理</td><td><span class="tag tag-red">最终决策人</span></td><td>公司战略、深海装备国产化、融资成本</td><td>直接沟通授信方案，展示我行综合服务能力</td></tr>
           <tr><td>孙XX</td><td>副总经理（工程总包）</td><td><span class="tag tag-orange">关键影响者</span></td><td>项目进度、海上施工、分包商管理</td><td>了解在手EPC项目，挖掘项目融资和保函需求</td></tr>
           <tr><td>周XX</td><td>技术总监</td><td><span class="tag tag-orange">关键影响者</span></td><td>水下生产系统研发、深海装备国产替代</td><td>了解在研产品和技术方向，判断未来订单</td></tr>
           <tr><td>马XX</td><td>财务总监</td><td><span class="tag tag-blue">日常对接人</span></td><td>现金流、项目回款、融资效率、汇率风险</td><td>日常对接人，关注审批效率和回款管理</td></tr>
           <tr><td>吴XX</td><td>采购部经理</td><td><span class="tag tag-gray">信息来源</span></td><td>特种钢材、密封件、传感器采购</td><td>了解进口材料采购节奏，挖掘信用证需求</td></tr>
-        </table>
+        </table></div>
         <div class="note">💡 首次拜访约财务总监马XX，第二次争取约总经理刘XX做高层拜访。</div>
       </div>
     </div>
@@ -329,7 +326,7 @@
         <button class="btn-expand">收起 ▲</button>
       </div>
       <div class="card-body" style="display:block;">
-        <table>
+        <div class="table-wrap"><table>
           <tr><td>指标</td><td>2023年度</td><td>2024年度</td><td>2025年度（预估）</td><td>趋势</td></tr>
           <tr><td>营业收入</td><td>2.8亿元</td><td>3.6亿元</td><td>4.5亿元</td><td><span class="tag tag-green">↑ 高增长</span></td></tr>
           <tr><td>净利润</td><td>2,100万元</td><td>3,200万元</td><td>4,500万元</td><td><span class="tag tag-green">↑ 高增</span></td></tr>
@@ -339,7 +336,7 @@
           <tr><td>在手订单/营收</td><td>2.2倍</td><td>2.8倍</td><td>3.1倍</td><td><span class="tag tag-green">↑ 饱满</span></td></tr>
           <tr><td>研发费用占比</td><td>11.5%</td><td>12.2%</td><td>12.8%</td><td><span class="tag tag-blue">稳定</span></td></tr>
           <tr><td>银行授信总额</td><td>8,000万</td><td>1.2亿</td><td>1.5亿</td><td><span class="tag tag-blue">↑</span></td></tr>
-        </table>
+        </table></div>
         <div class="note">⚠️ 财务数据来源于客户提供的审计报告/财报，具体数字以正式审计报告为准。</div>
       </div>
     </div>
@@ -377,7 +374,7 @@
           <div class="kpi-box"><div class="kpi-value">2,800万</div><div class="kpi-label">日均存款</div></div>
           <div class="kpi-box"><div class="kpi-value">A类</div><div class="kpi-label">客户评级</div></div>
         </div>
-        <table>
+        <div class="table-wrap"><table>
           <tr><td>产品</td><td>合作详情</td><td>金额</td><td>状态</td></tr>
           <tr><td>流动资金贷款</td><td>特种钢材/密封件采购，每年续作</td><td>3,000万</td><td><span class="tag tag-green">正常</span></td></tr>
           <tr><td>项目贷款</td><td>海水淡化装备制造基地建设</td><td>2,000万</td><td><span class="tag tag-green">正常</span></td></tr>
@@ -386,7 +383,7 @@
           <tr><td>履约/预付款保函</td><td>海洋工程EPC合同担保</td><td>年均5-8笔</td><td><span class="tag tag-green">正常</span></td></tr>
           <tr><td>基本结算账户</td><td>主结算行，工程回款归集</td><td>—</td><td><span class="tag tag-green">正常</span></td></tr>
           <tr><td>代发工资</td><td>320名员工（含海上作业津贴）</td><td>月均350万</td><td><span class="tag tag-green">正常</span></td></tr>
-        </table>
+        </table></div>
       </div>
     </div>
 
@@ -397,12 +394,12 @@
         <button class="btn-expand">收起 ▲</button>
       </div>
       <div class="card-body" style="display:block;">
-        <table>
+        <div class="table-wrap"><table>
           <tr><td>银行</td><td>推测产品</td><td>信息来源</td></tr>
           <tr><td>中国银行青岛分行</td><td>国际结算、信用证</td><td>海关进出口数据推测</td></tr>
           <tr><td>国开行</td><td>海洋工程项目贷款（大型EPC）</td><td>行业公开信息</td></tr>
           <tr><td>青岛银行</td><td>流动资金贷款、普惠金融</td><td>企业征信</td></tr>
-        </table>
+        </table></div>
         <div class="note">💡 我行是基本结算行，具有信息优势。国开行参与大型项目贷款，我行可在流动资金和保函上差异化竞争。</div>
       </div>
     </div>
@@ -414,7 +411,7 @@
         <button class="btn-expand">收起 ▲</button>
       </div>
       <div class="card-body" style="display:block;">
-        <table>
+        <div class="table-wrap"><table>
           <tr><td>时间</td><td>事件</td><td>银行业务</td></tr>
           <tr><td>2019.05</td><td>首次开户</td><td>开立基本户</td></tr>
           <tr><td>2019.11</td><td>首次授信</td><td>流贷1,500万</td></tr>
@@ -425,7 +422,7 @@
           <tr><td>2023.09</td><td>获评专精特新</td><td>授信提额至6,000万</td></tr>
           <tr><td>2024.05</td><td>中标国电投海上风电项目</td><td>保函需求激增</td></tr>
           <tr><td>2025.04</td><td>水下采油树通过海试</td><td>流动资金需求增加</td></tr>
-        </table>
+        </table></div>
       </div>
     </div>
   </div>
@@ -728,7 +725,7 @@
         <button class="btn-expand">收起 ▲</button>
       </div>
       <div class="card-body" style="display:block;">
-        <table>
+        <div class="table-wrap"><table>
           <tr><td>产品类别</td><td>推荐产品</td><td>匹配场景</td><td>优先级</td></tr>
           <tr><td><strong>授信</strong></td><td>流动资金贷款</td><td>水下采油树量产备产、特种钢材采购</td><td><span class="tag tag-red">★★★</span></td></tr>
           <tr><td><strong>授信</strong></td><td>固定资产贷款</td><td>海上风电装备产线扩建</td><td><span class="tag tag-red">★★★</span></td></tr>
@@ -739,7 +736,7 @@
           <tr><td><strong>存款</strong></td><td>主结算归集</td><td>中海油工程回款归集</td><td><span class="tag tag-orange">★★</span></td></tr>
           <tr><td><strong>公私</strong></td><td>高管/核心人员代发</td><td>持股技术人员+管理层</td><td><span class="tag tag-blue">★</span></td></tr>
           <tr><td><strong>政策</strong></td><td>专精特新专项贷</td><td>省级专精特新，冲击国家级</td><td><span class="tag tag-blue">★</span></td></tr>
-        </table>
+        </table></div>
       </div>
     </div>
 
@@ -750,14 +747,14 @@
         <button class="btn-expand">收起 ▲</button>
       </div>
       <div class="card-body" style="display:block;">
-        <table>
+        <div class="table-wrap"><table>
           <tr><td>场景</td><td>话术</td></tr>
           <tr><td>开场</td><td>"刘总好，我们一直关注咱们在深海装备国产替代的突破，尤其是水下采油树通过海试，国内非常领先。今天来聊聊怎么在资金层面配合量产和扩产节奏。"</td></tr>
           <tr><td>量产授信</td><td>"水下采油树量产，原材料采购资金需求不小。我们可以提供专项授信方案，配合采购周期灵活投放。"</td></tr>
           <tr><td>绿色信贷</td><td>"海水淡化和海上风电项目符合绿色信贷标准，可以申请优惠利率，对接碳减排支持工具，综合成本再降一些。"</td></tr>
           <tr><td>保函</td><td>"中海油和国电投的保函量在增加，我们大额保函72小时出函，不耽误投标节奏。"</td></tr>
           <tr><td>跨境</td><td>"进口欧洲密封件和传感器，我们可以提供信用证、跨境结算、汇率避险一站式服务。"</td></tr>
-        </table>
+        </table></div>
       </div>
     </div>
   </div>
